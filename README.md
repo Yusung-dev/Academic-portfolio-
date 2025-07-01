@@ -25,7 +25,7 @@
 
 ## 📬 Contact
 
-- Email: yusung@gmail.com  
+- Email: cyscyb@gmail.com
 - GitHub: [github.com/yusungchoi](https://github.com/yusungchoi)  
 - Kaggle: [kaggle.com/yourid](https://kaggle.com/yusungchoi)  
 - Dacon: [dacon.io/myprofile](https://dacon.io/profile/smileeeeee)
