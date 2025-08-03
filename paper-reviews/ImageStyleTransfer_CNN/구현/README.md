@@ -1,6 +1,6 @@
 ## 🧠논문 구현: Image Style Transfer Using Convolutional Neural Networks
 
-![result](./assets/result.jpg)  
+![result](../assets/result.jpg)  
 
 논문 링크: https://arxiv.org/abs/1508.06576
 
