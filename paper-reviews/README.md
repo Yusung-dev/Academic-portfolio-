@@ -85,9 +85,9 @@
 
 ## 논문 목록
 
-1. [Image Style Transfer Using Convolutional Neural Networks](paper-reviews/ImageStyleTransfer_CNN)  
-    &nbsp;&nbsp;&nbsp;&nbsp;- [논문 정리](paper-reviews/ImageStyleTransfer_CNN/정리)  
-    &nbsp;&nbsp;&nbsp;&nbsp;- [논문 구현](paper-reviews/ImageStyleTransfer_CNN/구현)  
+1. [Image Style Transfer Using Convolutional Neural Networks](./ImageStyleTransfer_CNN/README.md)  
+    &nbsp;&nbsp;&nbsp;&nbsp;- [논문 정리](./ImageStyleTransfer_CNN/README.md)  
+    &nbsp;&nbsp;&nbsp;&nbsp;- [논문 구현](./ImageStyleTransfer_CNN/구현)  
 
 
 
