@@ -1,6 +1,6 @@
 ## 📄 논문 정리: Image Style Transfer Using Convolutional Neural Networks
 
-![result](/paper-reviews/ImageStyleTransfer_CNN/구현/assets/result.jpg)
+![result](./assets/result.jpg)
 
 > 논문 링크: https://arxiv.org/abs/1508.06576
 > 
@@ -39,7 +39,7 @@
 ### 제안 방법의 구조는 어떤가?
 
 사전학습된 VGG19모델을 사용하였다 
-![construction]("https://github.com/user-attachments/assets/7d9b064c-27ef-4bd7-9664-43737344c52d" )
+![struct1](./assets/struct1.jpg)
 출처: Gatys et al., Image Style Transfer Using CNNs, CVPR 2016
 
 
