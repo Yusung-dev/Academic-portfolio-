@@ -36,15 +36,13 @@
 
 논문 제목 :
 
-1. What is the core idea
-2. Why is the work important
-3. What is the gap in the literature
-4. How is this gap addressed
-5. What is the structure or algorithm of the method
-6. What is achieved with the new method
-7. What data are used
-8. What are the limitations
-9. My one-line summary and personal thoughts
+1. 이 논문의 핵심 아이디어는 무엇인가?
+2. 이 연구가 중요한 이유는 무엇인가?
+3. 기존 연구들의 한계는 무엇인가?
+4. 그 한계를 어떻게 해결하였는가?
+5. 제안 방법의 구조는 어떤가?
+6. 어떤 성과를 얻었는가?
+7. 어떤 데이터를 사용했는가인적 생각
 
 ---
 
