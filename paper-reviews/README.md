@@ -86,8 +86,10 @@
 1. [Image Style Transfer Using Convolutional Neural Networks](./ImageStyleTransfer_CNN/README.md)  
     &nbsp;&nbsp;&nbsp;&nbsp;- [논문 정리](./ImageStyleTransfer_CNN/README.md)  
     &nbsp;&nbsp;&nbsp;&nbsp;- [논문 구현](./ImageStyleTransfer_CNN/구현)  
-2. [Colorful Image Colorization](./Colorful_Image_Colorization/README.md)  
+    &nbsp;&nbsp;&nbsp;&nbsp;- [논문 응용](./ImageStyleTransfer_CNN/응용)  
+3. [Colorful Image Colorization](./Colorful_Image_Colorization/README.md)  
     &nbsp;&nbsp;&nbsp;&nbsp;- [논문 정리](./Colorful_Image_Colorization/README.md)  
-    &nbsp;&nbsp;&nbsp;&nbsp;- [논문 구현](./Colorful_Image_Colorization/구현)  
+    &nbsp;&nbsp;&nbsp;&nbsp;- [논문 구현](./Colorful_Image_Colorization/구현)
+    &nbsp;&nbsp;&nbsp;&nbsp;- [논문 응용](./Colorful_Image_Colorization/응용)  
 
 
