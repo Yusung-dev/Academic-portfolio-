@@ -40,11 +40,11 @@
 ### 그 한계를 어떻게 해결하였는가?
 
 - **스타일** : Gram Matrix라는 식을 사용 -> CNN의 낮은층은 엣지, 생상, 질감같은 저차원 특징을 high -level에서 패턴, 구조와 같은 고차원 특징을 찾아냄으로써 여러 층의 Gram maxtrix를 동시에 맞추어 다중 스케일의 질감을 한번에 재현하였다
-- Gram Matrix 정의 : $G^l_{ij} = \sum_{k} F^l_{ik} F^l_{jk}$
+- **Gram Matrix 정의** : $G^l_{ij} = \sum_{k} F^l_{ik} F^l_{jk}$
 - **Content와 Style을 명확히 분리** : 콘텐츠 손실은 특정 한 층의 feature map 값 자체를 맞추는 방식, 스타일 손실은 여러 층에서 feature 간 상관을 맞추는 방식으로 정의해, 콘텐츠/스타일 간 충돌을 최소화했다
-- Content Loss : $`\mathcal{L}_{\text{content}}(p,x,l) = \frac{1}{2} \sum_{i,j} \left( F^l_{ij}(x) - F^l_{ij}(p) \right)^2`$
+- **Content Loss** : $`\mathcal{L}_{\text{content}}(p,x,l) = \frac{1}{2} \sum_{i,j} \left( F^l_{ij}(x) - F^l_{ij}(p) \right)^2`$
 
-- Style Loss : $E_l = \frac{1}{4 N_l^2 M_l^2} \sum_{i,j} \left( G^l_{ij}(x) - G^l_{ij}(a) \right)^2$
+- **Style Loss** : $E_l = \frac{1}{4 N_l^2 M_l^2} \sum_{i,j} \left( G^l_{ij}(x) - G^l_{ij}(a) \right)^2$
 
 ### 제안 방법의 구조는 어떤가?
 
@@ -56,7 +56,7 @@
     - 초기 합성 이미지 (white noise) $`\mathcal{I}`$
 2. VGG-19 특징 추출:
     - 모든 이미지의 동일 전처리(정규화, 사이즈 조정)
-    - 콘텐츠 손실용 층(`conv4_2)에서 feature 추출
+    - 콘텐츠 손실용 층(`conv4_2`)에서 feature 추출
     - 스타일 손실용 층(`conv1_1, conv2_1, conv3_1, conv4_1, conv5_1`)에서 feature 추출 -> Gram Matrix계산
 3. 손실 계산:
     - 콘텐츠 손실 : 초기 합성이미지와 콘텐츠 이미지의 콘텐츠 층 feature 차이 제곱합
@@ -65,7 +65,7 @@
     - 목표 : $`\mathcal{L}_{\text{total}}`$ 최소화
     - L-BFGS나 Adam으로 $`\mathcal{I}`$ 의 픽셀값 업데이트
 5. 반복
-    - 손실 수렵할때까지 or 정해진 step 수 만큼 반복
+    - 손실 수렴할때까지 or 정해진 step 수 만큼 반복
 <br>
 
 ```math
@@ -83,7 +83,7 @@
 \textbf{Output:} & \quad \text{Stylized image } I
 \end{aligned}
 ```
-<br>
+<br><br>
 
 ![struct1](./assets/struct1.jpg)
 >출처: Gatys et al., Image Style Transfer Using CNNs, CVPR 2016
