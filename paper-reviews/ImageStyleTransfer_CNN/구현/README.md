@@ -79,7 +79,7 @@ conv = {
   <img src="../assets/paper4.jpg" width="400" style="margin-right: 20px;">
 </div>
 -[Gatys et al., Image Style Transfer Using CNNs, CVPR 2016]
-<br><br><br>
+<br><br>
 
 그리고 이 사진과 함께 글에서 cnn을 사용한 이유를 들을 수 있었습니다  <br>
 
@@ -91,9 +91,9 @@ conv = {
 >-[Gatys et al., Image Style Transfer Using CNNs, CVPR 2016]
 
 content를 뽑기위해 cnn을 사용함으로써 high-level에서 세부적인 픽셀정보가 손실되지만 이미지의 고수준 내용을 보존해냈고  
-style은 cnn을 사용함으로써 주어진 이미지의 스타일을 점점 더 큰 스케일에서 일치시키는 이미지를 만들어내, 장면의 전체 구성에 대한 정보를 제거거함으로써 style을 뽑아낼 수 있었습니다  
+style은 cnn을 사용함으로써 주어진 이미지의 스타일을 점점 더 큰 스케일에서 일치시키는 이미지를 만들어내, 장면의 전체 구성에 대한 정보를 제거함으로써 style을 뽑아낼 수 있었습니다  
 이렇게 cnn이 content와 style을 뽑아냈기에 이러한 논문이 나올 수 있었지 않았나 생각됩니다
-<br><br><br>
+<br><br>
 
 ### 앞선 내용을 바탕으로 수도코드 만들기
 
@@ -121,7 +121,7 @@ class StyleTransfer:
 
         최종적으로 features 반환
 ```
-<br><br><br>
+<br>
 
 ### model 만들기
 
