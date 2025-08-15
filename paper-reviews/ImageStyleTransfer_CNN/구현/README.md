@@ -181,46 +181,65 @@ class StyleTransfer(nn.Module):
 논문에 각 content loss, style loss가 나와있었고 그 두개를 합친 total_loss까지 잘 설명되어있었습니다<br><br>
 
 ### content loss
-<div style="display: flex; align-items: flex-start;">
-  <img src="../assets/cal1.jpg" width="300" style="margin-right: 20px;">
-  <br>
-  <img src="../assets/cal2.jpg" width="300" style="margin-right: 20px;">
-</div>
-  
-- `x` : 생성된 입력 이미지  
-- `p` : 원본 이미지  
-- `l` : 이미지 층  
-- `P(l), F(l)` : 원본 이미지와 생성된 입력 이미지 각 이미지 l층에서의 특징 표현  
-
-임을 논문에서 찾을 수 있었습니다그럼으로써 mse를 구하고 그것으로 backpropagation을 계산해서 무작위 이미지인 x를 점차적으로 수정해 cnn의 특정 층에서 원래 이미지 p와 동일한 반응을 생성하도록 만들어 입력이미지인 x는 네트워크의 처리 계층을 따라 실제 내용인 content에 더 민감해지는 표현으로 변환되지만 그 정확한 외형은 불변해집니다 즉, 네트워크의 높은 층들은 입력 이미지 내 객체와 그 배열 측면에서 고수준의 내용을 포착하지만 복원 시의 정확한 픽셀 값에 대해서는 큰 제약을 두지 않고 이에 반해, 낮은 층들로부터의 복원은 원래 이미지의 정확한 픽셀 값을 단순히 재현합니다<br><br><br>
-
-### style loss
-<div style="display: flex; align-items: flex-start;">
-  <img src="../assets/cal3.jpg" width="150" style="margin-right: 20px;">
-  <br>
-  <img src="../assets/cal4.jpg" width="200" style="margin-right: 20px;">
-  <br>
-  <img src="../assets/cal5.jpg" width="200" style="margin-right: 20px;">
-  <br>
-  <img src="../assets/cal6.jpg" width="300" style="margin-right: 20px;">
-</div>
+```math
+\mathcal{L}_{\mathrm{content}}(\vec{p}, \vec{x}, l)
+= \frac{1}{2} \sum_{i,j} \left( F^l_{ij} - P^l_{ij} \right)^{2}
+```
+```math
+\frac{\partial \mathcal{L}_{\mathrm{content}}}{\partial F^l_{ij}} =
+\begin{cases}
+F^l_{ij} - P^l_{ij}, & \text{if } F^l_{ij} > 0, \\
+0, & \text{if } F^l_{ij} < 0
+\end{cases}
+```
 <br>
   
-- `G(i,j)` : i와 j 간의 내적
-- `a` : 원본 이미지  
-- `A(l), F(l)` : 원본 이미지 l층에서의 특징 표현  
-- `w` : 각 층이 전체 손실에 기여하는 정도를 조절하는 가중치 계수  
+- $`\vec{x}`$ : 생성된 입력 이미지  
+- $`\vec{p}`$ : 원본 이미지  
+- $`\mathcal{l}`$ : 이미지 층  
+- $`\mathcal{P}(l)`$, $`\mathcal{F}(l)`$ : 원본 이미지와 생성된 입력 이미지 각 이미지 $`\mathcal{l}`$ 층에서의 특징 표현  
 
-임을 논문에서 찾을 수 있었습니다 입력 이미지의 스타일에 대한 표현을 얻기 위해 질감 정보를 포착하도록 설계된 특징 공간을 사용합니다 특징 상관관계는 G(l)이 만들러입니다 스타일 표현에 포함된 각 층마다 G(l)과 A(l)간의 요소별 평균 제곱오차가 계산되어 스타일 손실 L(style)이 됩니다<br><br><br>
+임을 논문에서 찾을 수 있었습니다그럼으로써 MSE를 구하고 그것으로 backpropagation을 계산해서 무작위 이미지인 $`\vec{x}`$ 를 점차적으로 수정해 CNN의 특정 층에서 원래 이미지 $`\vec{p}`$ 와 동일한 반응을 생성하도록 만들어 입력이미지인 $`\vec{x}`$ 는 네트워크의 처리 계층을 따라 실제 내용인 content에 더 민감해지는 표현으로 변환되지만 그 정확한 외형은 불변해집니다 즉, 네트워크의 높은 층들은 입력 이미지 내 객체와 그 배열 측면에서 고수준의 내용을 포착하지만 복원 시의 정확한 픽셀 값에 대해서는 큰 제약을 두지 않고 이에 반해, 낮은 층들로부터의 복원은 원래 이미지의 정확한 픽셀 값을 단순히 재현합니다<br><br><br>
+
+### style loss
+
+```math
+G^l_{ij} = \sum_k F^l_{ik} F^l_{jk} \\[1em]
+```
+```math
+E_l = \frac{1}{4 N_l^2 M_l^2} \sum_{i,j} \left( G^l_{ij} - A^l_{ij} \right)^{2} \\[1em]
+```
+```math
+\mathcal{L}_{\mathrm{style}}(\vec{a}, \vec{x}) = \sum_{l=0}^{L} w_l E_l \\[1em]
+```
+```math
+\frac{\partial E_l}{\partial F^l_{ij}} =
+\begin{cases}
+\frac{1}{N_l^2 M_l^2} \left( (F^l)^{\mathrm{T}} \left( G^l - A^l \right) \right)_{ji}, & \text{if } F^l_{ij} > 0, \\
+0, & \text{if } F^l_{ij} < 0
+\end{cases}
+```
+<br>
+
+- $`\mathcal{G}(i,j)`$ : i와 j 간의 내적
+- $`\vec{x}`$ : 원본 이미지  
+- $`\mathcal{A}(l)`$, $`\mathcal{F}(l)`$ : 원본 이미지 $`\mathcal{l}`$ 층에서의 특징 표현  
+- $`\mathcal{w}`$ : 각 층이 전체 손실에 기여하는 정도를 조절하는 가중치 계수  
+
+임을 논문에서 찾을 수 있었습니다 입력 이미지의 스타일에 대한 표현을 얻기 위해 질감 정보를 포착하도록 설계된 특징 공간을 사용합니다 특징 상관관계는 $`\mathcal{G}(l)`$ 이 만들러입니다 스타일 표현에 포함된 각 층마다 $`\mathcal{G}(l)`$ 과 $`\mathcal{A}(l)`$ 간의 요소별 평균 제곱오차가 계산되어 스타일 손실 $`\mathcal{L}_{\text{style}}`$ 이 됩니다<br><br>
 
 ### total loss
-<div style="display: flex; align-items: flex-start;">
-  <img src="../assets/cal7.jpg" width="300" style="margin-right: 20px;">
- <br>
+
+```math
+\mathcal{L}_{\mathrm{total}}(\vec{p}, \vec{a}, \vec{x})
+= \alpha\, \mathcal{L}_{\mathrm{content}}(\vec{p}, \vec{x})
++ \beta\, \mathcal{L}_{\mathrm{style}}(\vec{a}, \vec{x})
+```
+<br>
 
  - '&alpha;, &beta;' : 하이퍼 파라미터
 
-총 손실 L(total)은 내용 손실과 스타일 손실의 선형 결합니였습니다 이 총손실을 이미지의 픽셀 값들에 대해 미분한 값은 오차 역전파로 계산될 수 있었으며 이 그래디언트가 이미 x를 반복적으로 갱신하는데 사용되고 결국 스타일 a의 스타일 특징과 내용 이미지 p의 내용 특징을 동시에 일치시킬 수 있었습니다
+총 손실 $`\mathcal{L}_{\text{total}}`$ 은 내용 손실과 스타일 손실의 선형 결합니였습니다 이 총손실을 이미지의 픽셀 값들에 대해 미분한 값은 오차 역전파로 계산될 수 있었으며 이 그래디언트가 이미 $`\vec{x}`$ 를 반복적으로 갱신하는데 사용되고 결국 스타일 $`\vec{a}`$ 의 스타일 특징과 내용 이미지 $`\vec{p}`$ 의 내용 특징을 동시에 일치시킬 수 있었습니다
 
 추가적으로 논문 result부분에서
 
@@ -270,6 +289,47 @@ class StyleLoss(nn.Module):
 ----------
 
 ## train.py
+
+마지막으로 train.py를 구현해 보았습니다
+<br>
+
+1. preprocessing
+    - 입력 이미지를 512×512로 리사이즈하고, ToTensor()로 float32 텐서로 바꿉니다. 결과 형태는 (1, C, H, W)입니다.
+    - ImageNet 통계(mean=[0.485,0.456,0.406], std=[0.229,0.224,0.225])로 정규화하여 VGG 기반 특성 추출에 맞춥니다.
+    - 최종 반환은 배치 차원을 붙인 텐서로, 바로 모델에 넣을 수 있는 형태입니다.
+
+2. postprocessing
+    - 학습 중인 생성 이미지 텐서를 CPU로 옮기고 numpy로 변환한 뒤, (H,W,C)로 전치합니다.
+    - 정규화의 역변환(denorm)을 적용해 원래 픽셀 스케일로 되돌립니다: image = image*std + mean 후 [0,1]로 클리핑하고 uint8로 변환합니다.
+    - PIL.Image로 다시 바꿔서 파일로 저장할 수 있도록 합니다.
+
+3. 모델/손실 구성
+    - StyleTransfer()는 백본에서 중간 feature를 뽑아, 모드에 따라 두 가지 표현을 제공합니다.
+        - `content`: 콘텐츠 손실 계산용 feature 리스트
+        - `style`: 스타일 손실 계산용 feature 리스트(보통 Gram matrix 계산에 적합한 레이어들)
+    - ContentLoss, StyleLoss는 각각 콘텐츠 일치, 스타일 일치를 측정합니다. 코드 본문에서는 각 레이어별 손실을 합산합니다.
+
+4. 하이퍼파라미터
+    - `alpha=1` : 콘텐츠 손실 가중치
+    - `beta=1e6`: 스타일 손실 가중치
+    - `lr=1` : 픽셀을 직접 최적화하므로 비교적 큰 학습률을 사용
+
+5. 디바이스 설정
+    - GPU가 있으면 cuda, 없으면 cpu에서 실행합니다. 모델과 입력 텐서를 같은 디바이스로 옮겨 일관성 있게 연산합니다.
+
+6. 초기 이미지 설정
+    - 논문상에서는 white image를 사용하였지만 조금 더 좋은 결과물을 얻기위해 이미지 그자체(content image)를 사용하였습니다.
+    - x.requires_grad_(True)로 픽셀을 미분 가능하게 만들어 옵티마이저가 업데이트할 수 있게 합니다.
+
+7. 옵티마이저
+    - optim.Adam([x], lr=lr)로 단 하나의 파라미터 집합(이미지 텐서 x)만 최적화합니다.
+
+8. 전체 파이프라인 요약
+   1. 콘텐츠/스타일 이미지를 로드하고 동일한 전처리를 적용
+   2. 미리 학습된 특성 추출 네트워크로 콘텐츠/스타일 타깃 표현 고정
+   3. 초기 이미지 x를 변수로 두고, 콘텐츠/스타일 손실을 최소화하도록 x를 직접 최적화
+   4. 주기적으로 중간 결과를 복원해 저장하며 수렴 상황을 확인
+<br>
 
 ```python
 #import
