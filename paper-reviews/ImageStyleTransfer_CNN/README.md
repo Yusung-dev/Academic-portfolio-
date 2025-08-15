@@ -40,24 +40,57 @@
 ### 그 한계를 어떻게 해결하였는가?
 
 - **스타일** : Gram Matrix라는 식을 사용 -> CNN의 낮은층은 엣지, 생상, 질감같은 저차원 특징을 high -level에서 패턴, 구조와 같은 고차원 특징을 찾아냄으로써 여러 층의 Gram maxtrix를 동시에 맞추어 다중 스케일의 질감을 한번에 재현하였다
+- Gram Matrix 정의 : $G^l_{ij} = \sum_{k} F^l_{ik} F^l_{jk}$
 - **Content와 Style을 명확히 분리** : 콘텐츠 손실은 특정 한 층의 feature map 값 자체를 맞추는 방식, 스타일 손실은 여러 층에서 feature 간 상관을 맞추는 방식으로 정의해, 콘텐츠/스타일 간 충돌을 최소화했다
+- Content Loss : $`\mathcal{L}_{\text{content}}(p,x,l) = \frac{1}{2} \sum_{i,j} \left( F^l_{ij}(x) - F^l_{ij}(p) \right)^2`$
 
+- Style Loss : $E_l = \frac{1}{4 N_l^2 M_l^2} \sum_{i,j} \left( G^l_{ij}(x) - G^l_{ij}(a) \right)^2$
 
 ### 제안 방법의 구조는 어떤가?
 
-- **네트워크** : ImageNet 사전학습 VGG-19모델을 사용
-- **입력** : Content 이미지, Style 이미지
-- **변수** : 합성 이미지 (초기값: white noise)
-- **손실** :
-- **최적화** : L-BGFS가 기본으로 사용되었으며 
-![struct1](./assets/struct1.jpg)
-출처: Gatys et al., Image Style Transfer Using CNNs, CVPR 2016
+새로운 네트워크를 설계하는 것이 아닌 사전학습된 VGG-19모델을 특징 추출기로 사용
 
-스타일이미지와 콘텐츠 이미지의 feature를 각각 추출하였다  
-    content : vgg19의 특정 상위 계층(conv4_2)  
-    style : vgg19의 여러 계층의 Gram matrix(conv1_1, conv2_1, conv3_1, conv4_1, conv5_1)  
+1. 입력:
+    - content 이미지 $`\mathcal{I}_{\text{c}}`$
+    - style 이미지 $`\mathcal{I}_{\text{s}}`$
+    - 초기 합성 이미지 (white noise) $`\mathcal{I}`$
+2. VGG-19 특징 추출:
+    - 모든 이미지의 동일 전처리(정규화, 사이즈 조정)
+    - 콘텐츠 손실용 층(`conv4_2)에서 feature 추출
+    - 스타일 손실용 층(`conv1_1, conv2_1, conv3_1, conv4_1, conv5_1`)에서 feature 추출 -> Gram Matrix계산
+3. 손실 계산:
+    - 콘텐츠 손실 : 초기 합성이미지와 콘텐츠 이미지의 콘텐츠 층 feature 차이 제곱합
+    - 스타일 손실 : 초기 합성이미지와 스타일 이미지의 각 스타일 층 Gram Matrix 차이 제곱합
+4. 최적화
+    - 목표 : $`\mathcal{L}_{\text{total}}`$ 최소화
+    - L-BFGS나 Adam으로 $`\mathcal{I}`$ 의 픽셀값 업데이트
+5. 반복
+    - 손실 수렵할때까지 or 정해진 step 수 만큼 반복
+<br>
+
+```math
+\begin{aligned}
+\textbf{Input:} & \quad \text{Content image } I_c,\; \text{Style image } I_s \\
+\text{Initialize:} & \quad I \gets \text{noise or } I_c \\
+\textbf{while not converged do:} & \\
+& \quad \text{Extract } F^l(I),\; F^l(I_c),\; F^l(I_s) \ \text{from VGG-19} \\
+& \quad \text{Compute } G^l(I),\; G^l(I_s) \ \text{for style layers} \\
+& \quad \mathcal{L}_{\text{content}} \gets \lVert F^l(I) - F^l(I_c) \rVert^2 \\
+& \quad \mathcal{L}_{\text{style}} \gets \sum_l \lVert G^l(I) - G^l(I_s) \rVert^2 \\
+& \quad \mathcal{L}_{\text{total}} \gets \alpha\,\mathcal{L}_{\text{content}} + \beta\,\mathcal{L}_{\text{style}} \\
+& \quad \text{Update } I \ \text{by gradient descent} \\
+\textbf{end while} & \\
+\textbf{Output:} & \quad \text{Stylized image } I
+\end{aligned}
+```
+<br>
+
+![struct1](./assets/struct1.jpg)
+>출처: Gatys et al., Image Style Transfer Using CNNs, CVPR 2016
+
+<br>
   
-random noise이미지에서 시작해 스타일과 콘텐츠의 loss를 최소화하도록 이미지를 반복적으로
+초기 합성 이미지( $`\mathcal{I}`$ )에서 시작해 스타일과 콘텐츠의 loss의 합( $`\mathcal{L}_{\text{total}}`$ )을 최소화하도록 이미지를 반복적으로
 업데이트한다  
 최종적으로 콘텐츠 구조는 유지하면서 스타일 특성이 반영된 결과 이미지를 생성한다
 
