@@ -9,7 +9,6 @@
 
 - 대표 학회 논문 위주로 보았습니다
   (예: CVPR, ICCV, AAAI, ECCV, NeurIPS, WACV  등)  
-- Papers with Code를 활용해 코드가 공개된 논문을 주로 리뷰하였습니다
 - Arxiv-sanity, Arxiv Digest, HuggingFace Papers 같은 큐레이션 사이트를 적극 활용하였습니다
 
 ---
