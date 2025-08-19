@@ -8,7 +8,7 @@
 ## 1. 논문 찾기 (What to read?)
 
 - 대표 학회 논문 위주로 보았습니다
-  (예: CVPR, ICCV, AAAI, ECCV, NeurIPS, WACV  등)  
+  (예: CVPR, ECCV, ICCV, AAAI, NeurIPS, WACV  등)  
 - Arxiv-sanity, Arxiv Digest, HuggingFace Papers 같은 큐레이션 사이트를 적극 활용하였습니다
 
 ---
