@@ -35,8 +35,14 @@ detection분야에서 좋은 성능을 냈었던 KeyNet을 선택하게되었습
 - IP(Index Proposal) 레이어로 창(window)별 미분 가능한 soft‑argmax 위치 추출, 그리고 M‑SIP 손실로 다양한 창 크기/스케일에서 공변 제약을 평균해 스케일 전반에 지배적인 키포인트를 학습하도록 유도하였으며 학습은 이미지 간 기하 변환(호모그래피) 만으로 지도하였다
 
 ### 제안 방법의 구조는 어떤가?
-사진사진사진  
 
+<div style="display: flex; align-items: flex-start;">
+  <img src="./assets/paper1.jpg" width="300" style="margin-right: 20px;">
+</div>
+
+>출처: Axel Barroso-Laguna, Key.Net, ICCV 2019
+
+- 입력: 동일
 
 ### 어떤 성과를 얻었는가?
 ### 어떤 데이터를 사용했는가?
