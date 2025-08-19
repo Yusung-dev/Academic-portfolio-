@@ -69,6 +69,7 @@ detection분야에서 좋은 성능을 냈었던 KeyNet을 선택하게되었습
   <img src="./assets/paper5.jpg" width="600" style="margin-right: 20px;">
 </div>
 
+>출처: Axel Barroso-Laguna, Key.Net, ICCV 2019
 
 **요약**
 1. 입력 이미지를 3스케일로 변환
