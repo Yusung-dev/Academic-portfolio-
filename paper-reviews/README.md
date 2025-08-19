@@ -95,7 +95,7 @@
     &nbsp;&nbsp;&nbsp;&nbsp;- [논문 구현](./DeepImagePrior/구현)  
     &nbsp;&nbsp;&nbsp;&nbsp;- [논문 응용](./DeepImagePrior/응용)
 
-4. [KeyNet](./KeyNet/README.md)
+4. [KeyNet](./KeyNet/README.md)  
     &nbsp;&nbsp;&nbsp;&nbsp;- [논문 정리](./KeyNet/README.md)  
-    &nbsp;&nbsp;&nbsp;&nbsp;- [논문 구현](./KeyNet/구현)     
+    &nbsp;&nbsp;&nbsp;&nbsp;- [논문 구현](./KeyNet/구현)    
 
