@@ -37,14 +37,83 @@ detection분야에서 좋은 성능을 냈었던 KeyNet을 선택하게되었습
 ### 제안 방법의 구조는 어떤가?
 
 <div style="display: flex; align-items: flex-start;">
-  <img src="./assets/paper1.jpg" width="300" style="margin-right: 20px;">
+  <img src="./assets/paper1.jpg" width="400" style="margin-right: 20px;">
 </div>
 
 >출처: Axel Barroso-Laguna, Key.Net, ICCV 2019
 
-- 입력: 동일
+- 1. 입력: 입력 이미지를 그대로 쓰지않고, 3단계의 스케일 피라미드를 만들었다
+  - Level 1 : 원본 이미지
+  - Level 2 : 가우시안 블러 + 약 1/1.2 downsampling
+  - Level 3 : Level 2 에서 또 downsampling
+
+- 2. Handcrafted 필터
+  - 각 스케일 이미지에 대한 핸드크래프트 도함수 필터를 적용하였다
+    - 1차 도함수 : $I_x,\, I_y,\, I_x^2,\, I_y^2,\, I_x I_y$
+    - 2차 도함수: $I_{xx},\, I_{yy},\, I_{xy},\, I_{xx} I_{yy},\, I_{xy}^2$
+
+- 3. CNN 블럭
+  - handcrafted feature map들을 learned convolution block에 투입
+  - 구성 : Conv(M개 5 * 5 필터) -> BatchNorm -> ReLU
+
+- 4. Upsampling
+  - 각 스케일에서 나온 feature map들을 upsampling함으로써 원본 이미지 크기로 맞추었고 그 다음 concatenate해서 모두 합침으로써 마지막 1개 convolution layer를 거쳐 최종 response map(각 픽셀이 keypoint일 확률)을 생성 
+
+- 5. M-SIP 레이어
+  - IP 레어어를 확장해 여러 윈도우 크기를 동시에 사용
+  - 작은 윈도우 -> 세밀한 점
+  - 큰 윈도우 -> 넓은 문맥에서 안정적인 점
+  - 최종 손실 = 각 윈도우 크기에서 계산한 공변 제약 손실의 가중 평균
+
+<div style="display: flex; align-items: flex-start;">
+  <img src="./assets/paper5.jpg" width="600" style="margin-right: 20px;">
+</div>
+
+
+**요약**
+1. 입력 이미지를 3스케일로 변환
+2. 각 스케일 → handcrafted 필터링 → CNN 블록 → feature map 생성
+3. 모든 feature map을 upsampling 후 concat
+4. 마지막 CNN으로 response map 생성
+5. response map에서 IP/M-SIP 레이어를 통해 좌표 뽑음
+6. NMS로 최종 keypoint 정제
 
 ### 어떤 성과를 얻었는가?
+
+<div style="display: flex; align-items: flex-start;">
+  <img src="./assets/paper2.jpg" width="450" style="margin-right: 20px;">
+</div>
+
+>출처: Axel Barroso-Laguna, Key.Net, ICCV 2019
+
+- HPatches repeatability(Top-1000, IoU 기준)
+  - **Viewpoint**: Key.Net‑SI 60.5/73.2(L/SL), Tiny‑Key.Net‑SI 57.8/70.3, Key.Net‑TI 34.2/71.5. Viewpoint에서는 Key.Net(및 Tiny)이 최상위를 기록하였다
+  - **Illumination**: TI 조건에선 Key.Net‑TI가 최고. SI 중에선 L기준 TCDET, SL기준 LF‑Net이 최상을 기록하였다
+<br>
+
+<div style="display: flex; align-items: flex-start;">
+  <img src="./assets/paper3.jpg" width="250" style="margin-right: 20px;">
+</div>
+
+>출처: Axel Barroso-Laguna, Key.Net, ICCV 2019
+
+- **매칭 성능(공정비교 위해 전부 HardNet 디스크립터 결합)**: Viewpoint에서 Key.Net이 최고 매칭 스코어를 기록하였다
+<br>
+
+<div style="display: flex; align-items: flex-start;">
+  <img src="./assets/paper4.jpg" width="300" style="margin-right: 20px;">
+</div>
+
+>출처: Axel Barroso-Laguna, Key.Net, ICCV 2019
+
+- **파라미터/속도**: SuperPoint 940k vs Key.Net 5.9k, Tiny‑Key.Net 280 파라미터. 600×600 입력에서 Tiny 5.7ms(175 FPS), Key.Net 31ms(32.25 FPS). 적은 파라미터로도 viewpoint repeatability 우수함을 보였다
+
 ### 어떤 데이터를 사용했는가?
+
+- **훈련**: ImageNet ILSVRC 2012로부터 합성 데이터이며 랜덤 기하 변환(스케일 0.5–3.5, 스큐 −0.8–0.8, 회전 −60°–60°) 후 대응 영역 추출. 총 12k 쌍(192×192), 9k/3k train/val를 사용하였다
+
+- **평가**: HPatches 전체 이미지 사용(116 시퀀스 = viewpoint 59, illumination 57). 쌍의 공통영역에서 Top‑1000 포인트, IoU<0.4(60% 이상 overlap) 기준으로 매칭/반복성 산출. 스케일 정규화/15×15 NMS 등 프로토콜 준수하였다
+
 ### 한계점은 무엇인가?
+
 ### 한줄 요약 및 갱니적 생각
