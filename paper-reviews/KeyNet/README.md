@@ -1,6 +1,9 @@
 ## 📄 논문 정리: Key.Net: Keypoint Detection by Handcrafted and Learned CNN filters
 
-![result1](./assets/result.jpg)
+<p align="center">
+  <img src="./assets/result2.jpg" width="700">
+</p>
+
 
 > 논문 링크: https://arxiv.org/abs/1508.06576
 > 
