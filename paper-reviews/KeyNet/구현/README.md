@@ -1,7 +1,7 @@
 # 🧠논문 구현: KeyNet: Keypoint Detection by Handcrafted and Learned CNN filters
 
 <p align="center">
-  <img src="./assets/result3.jpg" width="700">
+  <img src="../assets/result3.jpg" width="700">
 </p>
 
 논문 링크: https://arxiv.org/abs/1508.06576
