@@ -1,4 +1,4 @@
-## 📄 논문 정리: Key.Net: Keypoint Detection by Handcrafted and Learned CNN filters
+## 📄 논문 정리: KeyNet: Keypoint Detection by Handcrafted and Learned CNN filters
 
 <p align="center">
   <img src="./assets/result2.jpg" width="700">
