@@ -88,10 +88,10 @@
     &nbsp;&nbsp;&nbsp;&nbsp;- [논문 응용](./ImageStyleTransfer_CNN/응용) 
 
     
-2. [KeyNet](./KeyNet/README.md)  
+2. [KeyNet: Keypoint Detection by Handcrafted and Learned CNN filters](./KeyNet/README.md)  
     &nbsp;&nbsp;&nbsp;&nbsp;- [논문 정리](./KeyNet/README.md)  
     &nbsp;&nbsp;&nbsp;&nbsp;- [논문 구현](./KeyNet/구현)    
-3. [KeyNet](./SuperPoint/README.md)  
+3. [SuperPoint: Self-Supervised Interest Point Detection and Description](./SuperPoint/README.md)  
     &nbsp;&nbsp;&nbsp;&nbsp;- [논문 정리](./SuperPoint/README.md)  
     &nbsp;&nbsp;&nbsp;&nbsp;- [논문 구현](./SuperPoint/구현)    
 
