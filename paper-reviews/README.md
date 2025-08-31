@@ -87,15 +87,24 @@
     &nbsp;&nbsp;&nbsp;&nbsp;- [논문 구현](./ImageStyleTransfer_CNN/구현)  
     &nbsp;&nbsp;&nbsp;&nbsp;- [논문 응용](./ImageStyleTransfer_CNN/응용) 
 
-    
 2. [KeyNet: Keypoint Detection by Handcrafted and Learned CNN filters](./KeyNet/README.md)  
     &nbsp;&nbsp;&nbsp;&nbsp;- [논문 정리](./KeyNet/README.md)  
-    &nbsp;&nbsp;&nbsp;&nbsp;- [논문 구현](./KeyNet/구현)    
-3. [SuperPoint: Self-Supervised Interest Point Detection and Description](./SuperPoint/README.md)  
+    &nbsp;&nbsp;&nbsp;&nbsp;- [논문 구현](./KeyNet/구현)  
+   
+4. [SuperPoint: Self-Supervised Interest Point Detection and Description](./SuperPoint/README.md)  
     &nbsp;&nbsp;&nbsp;&nbsp;- [논문 정리](./SuperPoint/README.md)  
-    &nbsp;&nbsp;&nbsp;&nbsp;- [논문 구현](./SuperPoint/구현)
+    &nbsp;&nbsp;&nbsp;&nbsp;- [논문 구현](./SuperPoint/구현)  
 
-4. [SuperGlue: Learning Feature Matching with Graph Neural Networks](./SuperGlue/README.md)  
+5. [SuperGlue: Learning Feature Matching with Graph Neural Networks](./SuperGlue/README.md)  
     &nbsp;&nbsp;&nbsp;&nbsp;- [논문 정리](./SuperGlue/README.md)  
-    &nbsp;&nbsp;&nbsp;&nbsp;- [논문 구현](./SuperGlue/구현)   
+    &nbsp;&nbsp;&nbsp;&nbsp;- [논문 구현](./SuperGlue/구현)  
+
+6. [LoFTR: Detector-Free Local Feature Matching with Transformers](./LoFTR/README.md)  
+    &nbsp;&nbsp;&nbsp;&nbsp;- [논문 정리](./LoFTR/README.md)  
+    &nbsp;&nbsp;&nbsp;&nbsp;- [논문 구현](./LoFTR/구현)  
+
+7. [Convolutional Neural Network Architecture for Geometric Matching](./GeoCNN/README.md)  
+    &nbsp;&nbsp;&nbsp;&nbsp;- [논문 정리](./GeoCNN/README.md)  
+    &nbsp;&nbsp;&nbsp;&nbsp;- [논문 구현](./GeoCNN/구현)  
+
 
