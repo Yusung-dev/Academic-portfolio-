@@ -46,3 +46,7 @@
       
 7. **소프트 인라이어 개수**
     - 최종적으로 soft inlier를 count하는 함수를 정의해 inlier의 수를 구함 이때 loss는 이 count가 커지도록 학습시킴
+
+### 궁금했던 부분
+- 결국에 pixel by pixel로 고양이 귀 - 고양이 귀를 찾는 문제인데(=resnet 통해서 feature map뽑고 그 vector가 비슷하면 아 서로 같은 고양이 귀- 고양이 귀 이겠다며 비교해서 찾으면 되는데, 즉, corr map까지만 필요해 보이는데 ) 사진을 affine하는 이유는 affine함으로써 backpropagtion때 사진 A의 고양이 귀 pixel의 vector와 사진 B의 고양이 귀 pixel의 vector가 이전 그냥 feature map뽑았을때 보다 더욱 비슷해진다
+- affine하는게 귀옆에 눈이 있다라는 전역적 정보를 주기 위함이 아님. 정말 이 논문은 pixel by pixel로만 비교함
