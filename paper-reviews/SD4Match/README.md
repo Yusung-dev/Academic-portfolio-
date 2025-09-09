@@ -104,7 +104,7 @@ $$
 \sum_{u=1}^{HW_B} G_{n,u} \; \log \big( P_{\text{sel},n,u} \big)
 $$
 
-5. ** 추론 시 매칭 추출**
+5. **추론 시 매칭 추출**
     - 학습된 프롬프트를 이용해 corr map 계산 후 softmax
     - argmax로 단일 대응을 뽑는 대신, kernel-softargmax로 확률의 기대값을 계산해 더 부드럽고 안정적인 좌표를 추론
     - 최종적으로 A의 키포인트에 대응하는 B의 좌표를 얻는다
