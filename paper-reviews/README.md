@@ -123,6 +123,6 @@
     &nbsp;&nbsp;&nbsp;&nbsp;- [논문 정리](./SD4Match/README.md)  
     &nbsp;&nbsp;&nbsp;&nbsp;- [논문 구현](./SD4Match/구현)
 
-11. [**SD4Match**: Stable Diffusion Features for Semantic Matching](./SD4Match/README.md)  
-    &nbsp;&nbsp;&nbsp;&nbsp;- [논문 정리](./SD4Match/README.md)  
-    &nbsp;&nbsp;&nbsp;&nbsp;- [논문 구현](./SD4Match/구현)
+11. [**DistillDIFT**: Distillation of Diffusion Features for Semantic Correspondence](./DistillDIFT/README.md)  
+    &nbsp;&nbsp;&nbsp;&nbsp;- [논문 정리](./DistillDIFT/README.md)  
+    &nbsp;&nbsp;&nbsp;&nbsp;- [논문 구현](./DistillDIFT/구현)
