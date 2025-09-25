@@ -127,5 +127,10 @@
     &nbsp;&nbsp;&nbsp;&nbsp;- [논문 정리](./DistillDIFT/README.md)  
     &nbsp;&nbsp;&nbsp;&nbsp;- [논문 구현](./DistillDIFT/구현)
 
+12. [**GeoAware-SC**: Telling Left from Right: Identifying Geometry-Aware Semantic Correspondence](./GeoAware-SC/README.md)  
+    &nbsp;&nbsp;&nbsp;&nbsp;- [논문 정리](./GeoAware-SC/README.md)  
+    &nbsp;&nbsp;&nbsp;&nbsp;- [논문 구현](./GeoAware-SC/구현)
+
+
 
 cuda관련 논문
