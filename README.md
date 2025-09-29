@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/banner.png" alt="Banner" width="800"/>
+  <img src="banner1.png" alt="Banner" width="1000"/>
 </p>
 
 # 🌟 Yusung Choi's Academic Portfolio
