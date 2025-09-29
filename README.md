@@ -22,17 +22,17 @@ This repository serves as a portfolio documenting my research, competition exper
 
 ## 📁 Repository Structure
 
-- **📝 publications/**  
+- **📝 [publications/](./publications)**  
   A collection of research papers I have written and submitted to conferences/journals.
 
-- **🏆 competitions/**  
+- **📚 [paper-reviews/](./paper-reviews)**  
+  Summaries of papers I have read, highlighting the core ideas and my personal insights.
+  
+- **🏆 [competitions/](./competitions)**  
   Solutions and results from Kaggle, Dacon, and other AI competitions
   includes awards, reflections, and ideas for further improvement.
-  
-- **📚 paper-reviews/**  
-  Summaries of papers I have read, highlighting the core ideas and my personal insights.
 
-- **🧠 algorithm-study/**  
+- **🧠 [algorithm-study/](./algorithm-study)**  
   Notes from studying algorithms and coding interview problems.
   Contains solutions, strategies, and error analyses.
 ---
