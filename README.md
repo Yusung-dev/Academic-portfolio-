@@ -41,8 +41,8 @@ This repository serves as a portfolio documenting my research, competition exper
 
 - Email: cyscyb@gmail.com
 - GitHub: [github.com/yusungchoi](https://github.com/yusungchoi)  
-- Kaggle: [kaggle.com/yourid](https://kaggle.com/yusungchoi)  
-- Dacon: [dacon.io/myprofile](https://dacon.io/profile/smileeeeee)
+- Kaggle: [kaggle.com/yusungchoi](https://kaggle.com/yusungchoi)  
+- Dacon: [dacon.io/smileeeeee](https://dacon.io/profile/smileeeeee)
 
 ---
 
