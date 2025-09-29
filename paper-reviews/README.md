@@ -1,7 +1,39 @@
 # 📚 Paper Reviews Workflow
 
 안녕하세요! 이 폴더는 제가 논문을 체계적으로 읽고, 정리하며, 구현하고, 응용하는 과정을 기록하는 공간입니다.  
-아래는 제가 논문 리뷰를 진행하는 전반적인 파이프라인입니다.
+아래는 제가 논문한 논문들과 리뷰를 진행하는 전반적인 파이프라인입니다.
+
+---
+## 📑 Paper List  
+
+
+### 🔎 Correspondence Matching
+| No. | Title | Links |
+|-----|-------|-------|
+| 1 | [***KeyNet*** : *Keypoint Detection by Handcrafted and Learned CNN filters*](./KeyNet/README.md) | [정리](./KeyNet/README.md) · [구현](./KeyNet/구현) |
+| 2 | [***SuperPoint*** : *Self-Supervised Interest Point Detection*](./SuperPoint/README.md) | [정리](./SuperPoint/README.md) · [구현](./SuperPoint/구현) |
+| 3 | [***SuperGlue*** : *Feature Matching with Graph Neural Nets*](./SuperGlue/README.md) | [정리](./SuperGlue/README.md) · [구현](./SuperGlue/구현) |
+| 4 | [***LoFTR*** : *Detector-Free Local Feature Matching*](./LoFTR/README.md) | [정리](./LoFTR/README.md) · [구현](./LoFTR/구현) |
+| 5 | [***GeoCNN*** : *CNN Architecture for Geometric Matching*](./GeoCNN/README.md) | [정리](./GeoCNN/README.md) · [구현](./GeoCNN/구현) |
+| 6 | [***WeakAlign*** : *Weakly-supervised Semantic Alignment*](./Weakalign/README.md) | [정리](./Weakalign/README.md) · [구현](./Weakalign/구현) |
+| 7 | [***NC-Net*** : *Neighbourhood Consensus Networks*](./NCnet/README.md) | [정리](./NCnet/README.md) · [구현](./NCnet/구현) |
+| 8 | [***Hyperpixel Flow*** : *Semantic Correspondence with Multi-layer Features*](./HyperpixelFlow/README.md) | [정리](./HyperpixelFlow/README.md) · [구현](./HyperpixelFlow/구현) |
+| 9 | [***SD4Match*** : *Stable Diffusion Features for Semantic Matching*](./SD4Match/README.md) | [정리](./SD4Match/README.md) · [구현](./SD4Match/구현) |
+| 10 | [***DistillDIFT*** : *Distillation of Diffusion Features*](./DistillDIFT/README.md) | [정리](./DistillDIFT/README.md) · [구현](./DistillDIFT/구현) |
+| 11 | [***GeoAware-SC*** : *Geometry-Aware Semantic Correspondence*](./GeoAware-SC/README.md) | [정리](./GeoAware-SC/README.md) · [구현](./GeoAware-SC/구현) |
+
+---
+
+### 🏗 Geometric Reconstruction
+| No. | Title | Links |
+|-----|-------|-------|
+
+---
+
+### 🎨 Image Generation & Style
+| No. | Title | Links |
+|-----|-------|-------|
+| 1 | [*Image Style Transfer Using CNNs*](./ImageStyleTransfer_CNN/README.md) | [정리](./ImageStyleTransfer_CNN/README.md) · [구현](./ImageStyleTransfer_CNN/구현) · [응용](./ImageStyleTransfer_CNN/응용) |
 
 ---
 
@@ -9,7 +41,7 @@
 
 - 대표 학회 논문 위주로 보았습니다
   (예: CVPR, ECCV, ICCV, AAAI, NeurIPS, WACV  등)  
-- Arxiv-sanity, Arxiv Digest, HuggingFace Papers 같은 큐레이션 사이트를 적극 활용하였습니다
+- Arxiv Digest, HuggingFace Papers 같은 큐레이션 사이트를 적극 활용하였습니다
 
 ---
 
@@ -47,10 +79,10 @@
 
 ## 4. 논문 구현 및 재현 (Reproduce)
 
+- 핵심 알고리즘을 구현하고 실험해보았습니다
 - Papers with Code에서 공식 코드나 재구현 코드를 clone 후 논문 실험을 재현하였습니다
 - (작은 데이터셋으로 재현하였습니다)  
 - 경량 버전/디버그용 코드가 있다면 그것을 이용하였습니다  
-- 논문 전체를 돌리기 어렵다면 핵심 알고리즘 모듈만 따로 구현하고 실험해 보았습니다
 
 ---
 
@@ -79,58 +111,3 @@
 ---
 
 감사합니다!  
-
-## 논문 목록
-
-1. [Image Style Transfer Using Convolutional Neural Networks](./ImageStyleTransfer_CNN/README.md)  
-    &nbsp;&nbsp;&nbsp;&nbsp;- [논문 정리](./ImageStyleTransfer_CNN/README.md)  
-    &nbsp;&nbsp;&nbsp;&nbsp;- [논문 구현](./ImageStyleTransfer_CNN/구현)  
-    &nbsp;&nbsp;&nbsp;&nbsp;- [논문 응용](./ImageStyleTransfer_CNN/응용) 
-
-2. [**KeyNet**: Keypoint Detection by Handcrafted and Learned CNN filters](./KeyNet/README.md)  
-    &nbsp;&nbsp;&nbsp;&nbsp;- [논문 정리](./KeyNet/README.md)  
-    &nbsp;&nbsp;&nbsp;&nbsp;- [논문 구현](./KeyNet/구현)  
-   
-3. [**SuperPoint**: Self-Supervised Interest Point Detection and Description](./SuperPoint/README.md)  
-    &nbsp;&nbsp;&nbsp;&nbsp;- [논문 정리](./SuperPoint/README.md)  
-    &nbsp;&nbsp;&nbsp;&nbsp;- [논문 구현](./SuperPoint/구현)  
-
-4. [**SuperGlue**: Learning Feature Matching with Graph Neural Networks](./SuperGlue/README.md)  
-    &nbsp;&nbsp;&nbsp;&nbsp;- [논문 정리](./SuperGlue/README.md)  
-    &nbsp;&nbsp;&nbsp;&nbsp;- [논문 구현](./SuperGlue/구현)  
-
-5. [**LoFTR**: Detector-Free Local Feature Matching with Transformers](./LoFTR/README.md)  
-    &nbsp;&nbsp;&nbsp;&nbsp;- [논문 정리](./LoFTR/README.md)  
-    &nbsp;&nbsp;&nbsp;&nbsp;- [논문 구현](./LoFTR/구현)  
-
-6. [**GeoCNN**: Convolutional Neural Network Architecture for Geometric Matching](./GeoCNN/README.md)  
-    &nbsp;&nbsp;&nbsp;&nbsp;- [논문 정리](./GeoCNN/README.md)  
-    &nbsp;&nbsp;&nbsp;&nbsp;- [논문 구현](./GeoCNN/구현)  
-
-7. [**Weakalign**: End-to-end weakly-supervised semantic alignment](./Weakalign/README.md)  
-    &nbsp;&nbsp;&nbsp;&nbsp;- [논문 정리](./Weakalign/README.md)  
-    &nbsp;&nbsp;&nbsp;&nbsp;- [논문 구현](./Weakalign/구현)  
-
-8. [**NC-net**: Neighbourhood Consensus Networks](./NCnet/README.md)  
-    &nbsp;&nbsp;&nbsp;&nbsp;- [논문 정리](./NCnet/README.md)  
-    &nbsp;&nbsp;&nbsp;&nbsp;- [논문 구현](./NCnet/구현)
-
-9. [**Hyperpixel Flow**: Semantic Correspondence with Multi-layer Neural Features](./HyperpixelFlow/README.md)  
-    &nbsp;&nbsp;&nbsp;&nbsp;- [논문 정리](./HyperpixelFlow/README.md)  
-    &nbsp;&nbsp;&nbsp;&nbsp;- [논문 구현](./HyperpixelFlow/구현)
-
-10. [**SD4Match**: Stable Diffusion Features for Semantic Matching](./SD4Match/README.md)  
-    &nbsp;&nbsp;&nbsp;&nbsp;- [논문 정리](./SD4Match/README.md)  
-    &nbsp;&nbsp;&nbsp;&nbsp;- [논문 구현](./SD4Match/구현)
-
-11. [**DistillDIFT**: Distillation of Diffusion Features for Semantic Correspondence](./DistillDIFT/README.md)  
-    &nbsp;&nbsp;&nbsp;&nbsp;- [논문 정리](./DistillDIFT/README.md)  
-    &nbsp;&nbsp;&nbsp;&nbsp;- [논문 구현](./DistillDIFT/구현)
-
-12. [**GeoAware-SC**: Telling Left from Right: Identifying Geometry-Aware Semantic Correspondence](./GeoAware-SC/README.md)  
-    &nbsp;&nbsp;&nbsp;&nbsp;- [논문 정리](./GeoAware-SC/README.md)  
-    &nbsp;&nbsp;&nbsp;&nbsp;- [논문 구현](./GeoAware-SC/구현)
-
-
-
-cuda관련 논문
