@@ -1,26 +1,40 @@
-# Yusung Choi's Academic-Portfolio
+<p align="center">
+  <img src="assets/banner.png" alt="Banner" width="800"/>
+</p>
 
-안녕하세요! 저는 인공지능과 컴퓨터 비전 분야에 관심이 많은 학부생입니다
-이 저장소는 지금까지의 연구, 대회 참가 경험, 논문 작성 및 리뷰 활동을 정리한 포트폴리오입니다.
+# 🌟 Yusung Choi's Academic Portfolio
+
+Hello! 👋 I am an undergraduate student passionate about Artificial Intelligence (AI) and Computer Vision.
+This repository serves as a portfolio documenting my research, competition experiences, and paper reviews.
+
+<p align="center">
+  
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"/>
+  <img src="https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=cplusplus&logoColor=white"/>
+  <img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Kaggle-20BEFF?style=for-the-badge&logo=kaggle&logoColor=white"/>
+  <img src="https://img.shields.io/badge/CVPR-Conference-blue?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/ECCV-Conference-green?style=for-the-badge"/>
+
+</p>
 
 ---
 
-## 📁 구성 안내
+## 📁 Repository Structure
 
 - **📝 publications/**  
-  제가 직접 작성하여 학회/논문지에 제출한 논문들을 정리한 공간입니다.
+  A collection of research papers I have written and submitted to conferences/journals.
 
 - **🏆 competitions/**  
-  Kaggle, Dacon 등 AI 대회에 참가한 결과 및 솔루션을 공유합니다.  
-  수상 내역, 부족했던 점, 개선 아이디어 등을 함께 정리했습니다.
+  Solutions and results from Kaggle, Dacon, and other AI competitions
+  includes awards, reflections, and ideas for further improvement.
   
 - **📚 paper-reviews/**  
-  제가 읽은 논문들을 요약하고, 핵심 내용 및 개인적인 인사이트를 정리한 공간입니다.
+  Summaries of papers I have read, highlighting the core ideas and my personal insights.
 
 - **🧠 algorithm-study/**  
-  알고리즘 및 코딩 테스트 대비를 위해 공부한 내용을 정리한 공간입니다.
-  그 과정에서 공부한 내용, 풀이법, 오답 정리 등을 기록하고 습니다.
-
+  Notes from studying algorithms and coding interview problems.
+  Contains solutions, strategies, and error analyses.
 ---
 
 ## 📬 Contact
@@ -32,4 +46,4 @@
 
 ---
 
-감사합니다! 이 포트폴리오는 지속적으로 업데이트될 예정입니다.
+⚡ This portfolio is continuously updated as I progress in my research and learning journey.
