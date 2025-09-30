@@ -1,7 +1,8 @@
 # 📚 Paper Reviews Workflow
 
-안녕하세요! 이 폴더는 제가 논문을 체계적으로 읽고, 정리하며, 구현하고, 응용하는 과정을 기록하는 공간입니다.  
-아래는 제가 논문한 논문들과 리뷰를 진행하는 전반적인 파이프라인입니다.
+Hello!  
+This folder is a record of my process of **systematically reading, summarizing, implementing, and applying research papers**. Below is the list of papers I have reviewed, along with the overall **pipeline I follow for paper reviews**.
+
 
 ---
 ## 📑 Paper List  
@@ -37,77 +38,82 @@
 
 ---
 
-## 1. 논문 찾기 (What to read?)
+## 1. 📖 Finding Papers (What to Read?)
 
-- 대표 학회 논문 위주로 보았습니다
-  (예: CVPR, ECCV, ICCV, AAAI, NeurIPS, WACV  등)  
-- Arxiv Digest, HuggingFace Papers 같은 큐레이션 사이트를 적극 활용하였습니다
-
----
-
-## 2. 논문 읽기 (How to read?)
-
-- 논문 읽는 순서  
-  1. 1차 읽기: 전체 구조 파악 (abstract → introduction → conclusion)  
-  2. 2차 읽기: 깊게 읽기 (method [수식, 구조] → 실험 → related work)
-
-- 논문 읽을 때 체크할 포인트  
-  1. 이 논문의 핵심 아이디어는 무엇인가/어떤 문제를 해결하려 하는가?  
-  2. 이 연구가 왜 중요한가?  
-  3. 기존 연구들의 한계/빈틈은 무엇인가? (관련 연구들이 어떻게 발전해 왔는가)  
-  4. 앞서 말한 한계를 어떻게 해결하였는가? (기존 방법과의 차별점/새로워진 점)  
-  5. 구조/알고리즘은 어떻게 생겼는가?
-  6. 새로운 방법으로 어떤 성과가 나왔는가?
-  7. 연구에 사용된 데이터셋 혹은 자료는 무엇인가? (공개/수집 데이터, 데이터 규모, 특징)  
-  8. 그럼에도 논문에서 해결되지 않은 한계점은 무엇인가?
+- Focused primarily on papers from top-tier conferences  
+  (e.g., CVPR, ECCV, ICCV, AAAI, NeurIPS, WACV, etc.)  
+- Actively utilized curation platforms such as **Arxiv Digest** and **HuggingFace Papers**
 
 ---
 
-## 3. 논문 정리 (How to digest?)
+## 2. 👓 Reading Papers (How to Read?)
 
-논문 제목 :
+- **Reading order**  
+  1. First pass: grasp the overall structure (abstract → introduction → conclusion)  
+  2. Second pass: deep dive (method [formulas, architecture] → experiments → related work)  
 
-1. 이 논문의 핵심 아이디어는 무엇인가?
-2. 이 연구가 중요한 이유는 무엇인가?
-3. 기존 연구들의 한계는 무엇인가?
-4. 그 한계를 어떻게 해결하였는가?
-5. 제안 방법의 구조는 어떤가?
-6. 어떤 성과를 얻었는가?
-7. 어떤 데이터를 사용했는가인적 생각
-
----
-
-## 4. 논문 구현 및 재현 (Reproduce)
-
-- 핵심 알고리즘을 구현하고 실험해보았습니다
-- Papers with Code에서 공식 코드나 재구현 코드를 clone 후 논문 실험을 재현하였습니다
-- (작은 데이터셋으로 재현하였습니다)  
-- 경량 버전/디버그용 코드가 있다면 그것을 이용하였습니다  
+- **Key points to check while reading**  
+  - What is the core idea of this paper? / What problem does it aim to solve?  
+  - Why is this research important?  
+  - What are the limitations or gaps in prior work? (How has related research evolved?)  
+  - How does this paper address those limitations? (Key differences and novelties)  
+  - What does the proposed structure/algorithm look like?  
+  - What results or improvements were achieved with the new method?  
+  - What datasets or resources were used? (public vs. collected data, scale, characteristics)  
+  - What limitations remain unresolved in this work?
 
 ---
 
-## 5. 논문 비교 및 실험 (Experiment & Evaluate)
+## 3. 📝 Digesting Papers (How to Digest?)
 
-- 논문 구조 일부 바꿔보기 (예: Activation, Optimizer)  
-- 다른 데이터셋에 적용해보기  
-- Ablation Study 따라하거나 반대로 해보기  
+**Paper Title:**  
+**Authors:**  
+**Conference/Journal:**  
+
+- Motivation for selecting this paper
+
+1. What is the core idea of this paper?  
+2. Why is this research important?  
+3. What are the limitations of prior work?  
+4. How does this paper address those limitations?  
+5. What is the structure/algorithm of the proposed method?  
+6. What results were achieved?  
+7. What datasets were used?  
+8. 🔎 **Critical Reflection (my own analysis & critique)**  
+
+
+**Appendix**  
+1. Building an intuitive understanding of the structure  
+2. Questions I had & how they were resolved  
+
 
 ---
 
-## 6. 주제 응용 및 발전 (Extend or Apply)
+## 4. 🛠 Implementation & Reproduction (Reproduce)
 
-- 기존 논문을 다른 task에 적용해 보기 
-- 여러 논문 아이디어를 조합해 보기  
-- 본인의 관심 분야 문제에 맞춰 실험해 보기  
-- Kaggle, Dacon 대회 등에 적용해 보기  
+- First, I **independently implemented the core algorithms** and ran small-scale experiments to ensure I understood the underlying mechanics.  
+- Next, I explored official or re-implemented codes available on **Papers with Code**, cloning the repositories and carefully stepping through the codebase to verify that I could run and fully understand each component.  
+- Finally, I conducted **hands-on modifications**, such as altering network structures or adapting the code to my own datasets, to test whether the methods generalize and to deepen my comprehension.  
 
----
+> Through this process, I aim not only to reproduce results but also to develop the ability to **critically analyze and extend existing implementations**.
 
-## 7. 자기 주제 정립 (Research Topic Discovery)
-
-- 부족한 부분이 보이면 필요한 추가 연구를 수행하였습니다
-- 그 부분이 논문으로 발전할 가능성이 보인다면 본격적인 연구주제로 확장하였습니다.
 
 ---
 
-감사합니다!  
+## 5. 🚀 Application & Extension
+
+Building on the process of **reviewing, implementing, and reproducing papers**, I further explored the following directions:
+
+- Applying existing methods to **different tasks**  
+- **Combining ideas** from multiple papers to discover new possibilities  
+- Experimenting with methods on problems aligned with my **own research interests**  
+- Testing approaches on **real-world datasets** (e.g., Kaggle, Dacon competitions)  
+- Conducting **additional research** when limitations were identified, and extending them into potential research topics  
+
+> Rather than stopping at understanding and reproduction, I aimed to **apply and extend research ideas** to practical tasks, competitive challenges, and even new research directions.
+
+
+---
+
+This repository documents my journey of **studying papers, implementing ideas, and extending them into new directions**.  
+I will continue to update it with deeper explorations and further developments. ✨
