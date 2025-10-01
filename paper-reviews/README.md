@@ -23,13 +23,13 @@ This folder is a record of my process of **systematically reading, summarizing, 
 | 10 | [***DistillDIFT*** : *Distillation of Diffusion Features*](./DistillDIFT/README.md) | [정리](./DistillDIFT/README.md) · [구현](./DistillDIFT/구현) |
 | 11 | [***GeoAware-SC*** : *Geometry-Aware Semantic Correspondence*](./GeoAware-SC/README.md) | [정리](./GeoAware-SC/README.md) · [구현](./GeoAware-SC/구현) |
 
----
+
 
 ### 🏗 Geometric Reconstruction
 | No. | Title | Links |
 |-----|-------|-------|
 
----
+
 
 ### 🎨 Image Generation & Style
 | No. | Title | Links |
