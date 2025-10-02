@@ -1,7 +1,9 @@
 ## 📄 논문 구현: Telling Left from Right: Identifying Geometry-Aware Semantic Correspondence
 
 ![result](../assets/result2.png)  
-
+<p align="center">
+  <span> 출처: Junyi Zhang, GeoAware-SC, CVPR 2024 </span>
+</p>
 
 > 논문 링크: https://arxiv.org/abs/2311.17034 
 > 
