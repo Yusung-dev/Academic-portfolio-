@@ -1,5 +1,7 @@
 ## 📄 논문 정리: Telling Left from Right: Identifying Geometry-Aware Semantic Correspondence
 
+![result](./assets/result2.png)  
+
 > 논문 링크: https://arxiv.org/abs/2311.17034 
 > 
 > 발표 학회/연도: CVPR 2024
