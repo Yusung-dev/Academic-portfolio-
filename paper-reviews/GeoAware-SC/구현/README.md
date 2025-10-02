@@ -185,7 +185,7 @@ def window_softargmax(sim, k=15):
         patch = sim[b, y0:y1, x0:x1].unsqueeze(0)
         off = softargmax2d(patch).squeeze(0)
         outs.append(torch.stack([x0 + off[0], y0 + off[1]]))
-    return torch.stack(outs, dim=0)  # (B, 2) in (x,y)
+    return torch.stack(outs, dim=0)
 
 ```
 
@@ -214,3 +214,6 @@ python demo.py
 3. 여러 pose 후보 생성 --> IMD로 최적 pose 선택
 4. 선택된 소스 피처 기준으로 타깃과 유사도 맵 계싼
 5. Window Soft-Argmax로 최종 대응 좌표 추정
+
+---
+
