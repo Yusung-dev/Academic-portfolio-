@@ -25,6 +25,12 @@ This folder is a record of my process of **systematically reading, summarizing, 
 
 
 
+### 🧩 3D Classification & Segmentation
+| No. | Title | Links |
+|1| [***PointNet*** : *Deep Learning on Point Sets for 3D Classification and Segmentation*](./PointNet/README.md) | [정리](./PointNet/README.md) · [구현](./PointNet/구현) |
+
+
+
 ### 🏗 Geometric Reconstruction
 | No. | Title | Links |
 |-----|-------|-------|
