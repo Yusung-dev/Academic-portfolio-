@@ -1,6 +1,6 @@
 ## 📄 논문 구현: PointNet: Deep Learning on Point Sets for 3D Classification and Segmentation
 
-![result](./assets/result1.png)  
+![result](../assets/result1.png)  
 <p align="center">
   <span> 출처: Charles R. Qi, PointNet, CVPR 2017 </span>
 </p>
