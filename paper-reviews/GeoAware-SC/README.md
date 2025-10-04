@@ -1,4 +1,4 @@
-## 📄 논문 정리: Telling Left from Right: Identifying Geometry-Aware Semantic Correspondence
+## 📄 논문 정리: PointNet — Deep Learning on Point Sets for 3D Classification and Segmentation
 
 ![result](./assets/result2.png)  
 <p align="center">
@@ -13,7 +13,7 @@
 <br>
 
 **해당 논문 선택 이유**
-Semantic Correspondence는 두 이미지 간 의미적으로 대응되는 부분을 정확히 찾는 것을 목표로 하지만, 기존 방법들은 “왼쪽 발 - 오른쪽 발”처럼 **기하학적 모호성(geometry ambiguity)**이 존재할 때 취약했습니다.
+Semantic Correspondence는 두 이미지 간 의미적으로 대응되는 부분을 정확히 찾는 것을 목표로 하지만, 기존 방법들은 “왼쪽 발 - 오른쪽 발”처럼 **기하학적 모호성(geometry ambiguity)** 이 존재할 때 취약했습니다.
 GeoAware-SC는 이 문제를 간단하지만 효과적인 방법으로 해결하여 좌/우, 앞/뒤를 구분할 수 있는 correspondence를 가능하게 했습니다
 백본을 바꾸지 않고 후처리 모듈과 추론 전략만으로 성능을 크게 개선한 점이 흥미로워 선택하게 되었습니다
 
