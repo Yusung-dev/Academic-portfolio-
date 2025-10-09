@@ -32,7 +32,7 @@ This folder is a record of my process of **systematically reading, summarizing, 
 
 
 
-### 🏗 Geometric Reconstruction
+### 🏗 3D Reconstruction
 | No. | Title | Links |
 |-----|-------|-------|
 
