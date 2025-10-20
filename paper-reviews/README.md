@@ -38,7 +38,7 @@ This folder is a record of my process of **systematically reading, summarizing, 
 
 
 
-### 🎨 Image Generation & Style
+### 🎨 Others
 | No. | Title | Links |
 |-----|-------|-------|
 | 1 | [*Image Style Transfer Using CNNs*](./ImageStyleTransfer_CNN/README.md) | [정리](./ImageStyleTransfer_CNN/README.md) · [구현](./ImageStyleTransfer_CNN/구현) · [응용](./ImageStyleTransfer_CNN/응용) |
