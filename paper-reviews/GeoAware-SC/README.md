@@ -21,7 +21,7 @@ GeoAware-SC는 이 문제를 간단하지만 효과적인 방법으로 해결하
 
 ### 이 논문의 핵심 아이디어는 무엇인가?
 - **기하학적 인식(Geometry-awareness)** 을 Semantic Correspondence의 새로운 관점으로 정의
-- 기존 FOundation Model (DINOv2, Stable Diffusion) 피처를 그대로 사용하되,
+- 기존 Foundation Model (DINOv2, Stable Diffusion) 피처를 그대로 사용하되,
   - 경량 후처리 모듈(Post-processor) 학습
   - Soft-argmax 기반 Dense Training
   - Pose-variant Augmentation (Train)
