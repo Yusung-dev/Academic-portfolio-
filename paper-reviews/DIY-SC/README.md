@@ -1,9 +1,11 @@
 ## 📄 논문 정리: Do It Yourself: Learning Semantic Correspondence from Pseudo-Labels
 
-![result](./assets/paper1.png)  
 <p align="center">
-  <span> 출처: Olaf Dünkel, DIY-SC, arxiv preprint </span>
+  <img src="./assets/paper1.png" alt="result" width="40%">
+  <br>
+  <span style="font-size:13px;">출처: Olaf Dünkel, DIY-SC, arXiv preprint</span>
 </p>
+
 
 
 > 논문 링크: https://arxiv.org/pdf/2506.05312
@@ -83,7 +85,7 @@ $$
 
 ### 어떤 성과를 얻었는가?
 
-![result](./assets/paper1.png)  
+![result](./assets/paper3.png)  
 <p align="center">
   <span> 출처: Olaf Dünkel, DIY-SC, arxiv preprint </span>
 </p>
