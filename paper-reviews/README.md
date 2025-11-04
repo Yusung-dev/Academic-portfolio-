@@ -22,7 +22,7 @@ This folder is a record of my process of **systematically reading, summarizing, 
 | 9 | [***SD4Match*** : *Stable Diffusion Features for Semantic Matching*](./SD4Match/README.md) | [정리](./SD4Match/README.md) · [구현](./SD4Match/구현) |
 | 10 | [***DistillDIFT*** : *Distillation of Diffusion Features*](./DistillDIFT/README.md) | [정리](./DistillDIFT/README.md) · [구현](./DistillDIFT/구현) |
 | 11 | [***GeoAware-SC*** : *Geometry-Aware Semantic Correspondence*](./GeoAware-SC/README.md) | [정리](./GeoAware-SC/README.md) · [구현](./GeoAware-SC/구현) |
-
+| 12 | [***Do It Yourself*** : *Learning Semantic Correspondence from Pseudo-Labels*](./GeoAware-SC/README.md) | [정리](./DIY-SC/README.md) · [구현](./DIY-SC/구현) |
 
 
 ### 🧩 3D Classification & Segmentation
